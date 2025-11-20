@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Audio</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Surprise ! 🎵</h1>
+
+    <!-- Le son se lance automatiquement -->
+    <audio id="audio" autoplay playsinline>
+        <source src="son.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Forcer la lecture même si le navigateur bloque l'autoplay
+        const audio = document.getElementById('audio');
+        document.addEventListener('click', () => {
+            audio.play();
+        });
+        window.onload = () => {
+            audio.play();
+        };
+    </script>
+</body>
+</html>
